@@ -178,18 +178,17 @@ bio.display = function() {
     $("#topContacts").append(formattedGithub);
 
     var formattedTwitter = HTMLtwitter.replace(/%data%/g, bio.contacts.twitter);
-    $("#topContacts").append(formattedTwitter);  
+    $("#topContacts").append(formattedTwitter);
 
     if (bio.skills.length !== 0) {
         $("#header").append(HTMLskillsStart);
         for (var i = 0; i < bio.skills.length; i++) {
-            var formattedSkill = HTMLskills.replace("%data%",bio.skills[i]);
+            var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
             $("#skills").append(formattedSkill);
         }
     }
 
 };
-
 
 
 
@@ -205,7 +204,7 @@ $(document).click(function(loc) {
 function locationizer(work_obj) {
     var locationArray = [];
 
-    for (job in work_obj.jobs) {
+    for (var job in work_obj.jobs) {
         var newLocation = work_obj.jobs[job].location;
         locationArray.push(newLocation);
 
@@ -232,20 +231,20 @@ $("#main").append(internationalizeButton);
 
 // function for display of all projects 
 projects.display = function() {
-    for(var i = 0 ; i < projects.projects.length ; i++) {
+    for (var i = 0; i < projects.projects.length; i++) {
         $("#projects").append(HTMLprojectStart);
 
-        var formattedTitle = HTMLprojectTitle.replace("%data%",projects.projects[i].title);
+        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title);
         $(".project-entry:last").append(formattedTitle);
 
-        var formattedDates = HTMLprojectDates.replace("%data%",projects.projects[i].dates);
+        var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
         $(".project-entry:last").append(formattedDates);
 
-        var formattedDescription = HTMLprojectDescription.replace("%data%",projects.projects[i].description);
+        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
         $(".project-entry:last").append(formattedDescription);
 
-        for(var j = 0 ;j < projects.projects[i].images.length ; j++) {
-            var formattedImage = HTMLprojectImage.replace("%data%",projects.projects[i].images[j]);
+        for (var j = 0; j < projects.projects[i].images.length; j++) {
+            var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[j]);
             $(".project-entry:last").append(formattedImage);
         }
     }
