@@ -79,8 +79,6 @@ var projects = {
 
 
 
-
-
 // display function for all jobs
 work.display = function() {
     for (var job = 0; job < work.jobs.length; job++) {
@@ -154,7 +152,7 @@ bio.display = function() {
     var formattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
     $("#header").prepend(formattedBiopic);
 
-    var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.message);
+    var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     $("#header").append(formattedWelcomeMessage);
 
     // footer contacts 
